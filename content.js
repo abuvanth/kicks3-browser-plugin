@@ -8,8 +8,9 @@ let array = [...html.match(s3regex)];
 
 console.log(array)
 var opts = {
-    method: 'GET',      
-    headers: {}
+    method: 'POST',      
+    headers: {"content-type":"application/json"},
+    body:JSON.stringify({"bucketlist":array})
   };
   fetch('http://127.0.0.1:5000/', opts).then(function (response) {
     return response.json();
